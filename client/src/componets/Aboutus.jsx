@@ -21,16 +21,14 @@ function Aboutus() {
             text-[20px] font-semibold m-[20px] text-center 
             sm:text-[25px] sm:m-[25px]
             lg:text-[30px] lg:font-semibold lg:m-[40px]">
-              Experience the traditional barbershop look and feel
+             Best in town for haircuts & styling
             </h3>
             <p className="
-            w-[360px] text-[#787676] font-medium text-[14px] text-center ml-[15px] mb-[30px] 
+            w-[360px] text-[#787676] font-medium text-[14px] text-center  ml-[15px] mb-[30px] 
             sm:w-[400px] sm:text-[14px] sm:ml-[10px] 
-            lg:w-[440px] lg:font-medium lg:text-[18px] lg:ml-[40px] lg:-mt-[20px]">
-              Come see what all the buzz is about. If your looking for precision
-              and that quality haircut then this is your place. Our highly
-              trained barbers are very versatile and cut all hair types and
-              styles.
+            lg:w-[440px] lg:font-medium lg:text-[18px] lg:ml-[100px] lg:-mt-[20px]">
+             We specialise in hair & make up services. Long hair, short hair, wavy hair, frizzy hair, dull hair, curly hair, we work with passion & love on all types of hair to give you the look you desire.
+<br />Let our experts guide you with their creative ideas from global experience and you will fall in love with yourself
             </p>
           </div>
           <div

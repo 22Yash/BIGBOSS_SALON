@@ -5,6 +5,8 @@ import Aboutus from '../componets/Aboutus'
 import Service from '../pages/Service'
 import Shop from './Shop'
 import BookAppoinment from './BookAppoinment'
+import ContactUS from './ContactUS'
+import Contact from '../componets/Contact'
 
 function Home() {
   return (
@@ -13,7 +15,8 @@ function Home() {
       <Aboutus/>
       <Service/>
       <Shop/>
-      
+      <Contact/>
+     
       
     </div>
   )

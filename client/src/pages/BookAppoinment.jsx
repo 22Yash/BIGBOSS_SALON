@@ -143,7 +143,7 @@ function BookAppoinment() {
         <Navbar />
 
         <div
-          className="absolute left-0 w-full h-[400px] bg-cover bg-center top-[80px]"
+          className="absolute left-0 w-full h-[400px] bg-cover bg-center top-[120px]"
           style={{ backgroundImage: `url(${blog2})` }}
         >
           <div
@@ -166,7 +166,7 @@ function BookAppoinment() {
           >
             <div
               id="div"
-              className="lg:w-[1200px] lg:bg-[#f2f2f2] lg:mt-[-700px] lg:justify-center lg:items-center lg:flex lg:flex-col lg:rounded-[40px]"
+              className="lg:w-[1200px] lg:bg-[#f2f2f2] lg:mt-[-200px] lg:justify-center lg:items-center lg:flex lg:flex-col lg:rounded-[40px]"
             >
               {/* User Info */}
               <div
@@ -193,10 +193,14 @@ function BookAppoinment() {
               </div>
 
               {/* Service Selection and subservice */}
-              <div className="lg:w-[1000px] lg:flex lg:flex-row   lg:gap-[40px] lg:items-start lg:justify-start">
+              <div className="
+              w-full grid grid-cols-2 p-[20px] gap-[10px]
+              lg:w-[1000px] lg:flex lg:flex-row   lg:gap-[40px] lg:items-start lg:justify-start">
                 <div
                   id="div"
-                  className="lg:w-[900px] lg:flex lg:flex-col bg-white rounded-[10px] border-2 lg:p-[10px]  lg:items-start lg:justify-start mt-6"
+                  className="
+                   bg-red-300 p-[5px]
+                  lg:w-[900px] lg:flex lg:flex-col lg:bg-white rounded-[10px] border-2 lg:p-[10px]  lg:items-start lg:justify-start mt-6"
                 >
                   <h3 className="font-semibold text-lg mb-4">
                     Select Services:
@@ -217,7 +221,9 @@ function BookAppoinment() {
                 </div>
 
                 {/* Sub-Service Selection */}
-                <div className="lg:w-[900px] lg:flex lg:flex-col bg-white rounded-[10px] border-2 lg:p-[10px] lg:items-start lg:justify-start mt-6">
+                <div className="
+                p-[5px]
+                lg:w-[900px] lg:flex lg:flex-col bg-white rounded-[10px] border-2 lg:p-[10px] lg:items-start lg:justify-start mt-6">
                   <h3 className="font-semibold text-lg mb-4">
                     Select Sub-Services:
                   </h3>
@@ -240,7 +246,7 @@ function BookAppoinment() {
                                 )
                               }
                             />{" "}
-                            {subService.name} - ${subService.price}
+                            {subService.name} - ₹{subService.price}
                           </label>
                         </div>
                       ))}
@@ -249,7 +255,7 @@ function BookAppoinment() {
                 </div>
               </div>
 
-              <p>you selectes {user.selectedSubServices + "   "}</p>
+              <p className="ml-[140px]">you selectes : <br />{user.selectedSubServices + "  "}</p>
 
               {/* Staff and Date Selection */}
               <div id="rowThree"  className="w-[600p] flex flex-col justify-center items-center gap-[20px] lg:w-[1200px] lg:p-[40px] lg:text-[20px] lg:flex lg:flex-row lg:justify-around lg:mt-[50px]">
@@ -260,7 +266,9 @@ function BookAppoinment() {
                   placeholder="Select staff"
                   value={user.staff}
                   onChange={handleInput}
-                  className="w-[300px] h-[40px] p-[20px] rounded-[10px] border-2 lg:w-[400px] lg:h-[50px] lg:p-[4px] lg:rounded-[10px]"
+                  className="
+                  mt-[3 0px]
+                  w-[300px] h-[40px] p-[20px] rounded-[10px] border-2 lg:w-[400px] lg:h-[50px] lg:p-[4px] lg:rounded-[10px]"
                 />
                 <datalist id="staffs">
                   <option value="Shivani" />
@@ -285,8 +293,8 @@ function BookAppoinment() {
               </div>
 
               {/* Total Price Display */}
-              <div className="mt-[20px]">
-                <h3>Total Price: ${user.totalPrice}</h3>
+              <div className="mt-[20px] ml-[140px]">
+                <h3>Total Price: ₹{user.totalPrice}</h3>
               </div>
 
               {/* Submit Button */}

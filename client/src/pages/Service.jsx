@@ -5,22 +5,21 @@ import ShavingService from '../componets/ShavingService';
 import TrimmingService from '../componets/TrimmingService';
 import HairstylingService from '../componets/HairstylingService';
 
-
 function Service() {
   const [selectedService, setSelectedService] = useState('');
 
   const renderServiceComponent = () => {
     switch (selectedService) {
       case 'HAIRCUT':
-        return <HaircutService/>;
+        return <HaircutService />;
       case 'SHAVING':
-        return <ShavingService/>;
+        return <ShavingService />;
       case 'TRIMMING':
-        return <TrimmingService/>;
+        return <TrimmingService />;
       case 'HAIRSTYLING':
-        return <HairstylingService/>;
+        return <HairstylingService />;
       default:
-        return <HaircutService/>;
+        return <HaircutService />;
     }
   };
 
@@ -36,30 +35,21 @@ function Service() {
             <p className='text-white w-[400px] text-[14px]  lg:w-[550px] lg:text-[20px] text-center lg:ml-[30px]'>Combining traditional techniques with modern styles, providing cut, color, and shave services.</p>
           </div>
         </div>
-        <div id="serviceList" className='merriweather-regular flex justify-center flex-col items-center h-[240px] bg-red-400 lg:grid lg:grid-cols-4 lg:bg-white lg:h-[80px] lg:m-[60px] lg:-mt-[80px]'>
+        <div id="serviceList" className='merriweather-regular flex justify-center flex-col items-center h-[240px] bg-white lg:grid lg:grid-cols-4  lg:h-[80px] lg:m-[60px] lg:-mt-[80px]'>
           <div id="serviceOne" 
-          className='
-          h-[60px] bg-purple-200 w-full text-center p-[20px]
-          lg:border-r-2 lg:border-black lg:text-center lg:text-[25px] lg:p-[20px]'>
-            
+            className={`h-[80px] w-full text-center  p-[20px] lg:border-r-2 lg:border-black font-semibold lg:text-center lg:text-[22px] lg:p-[20px] ${selectedService === 'HAIRCUT' ? 'bg-[#ae8547]' : 'bg-white'}`}>
             <button onClick={() => setSelectedService('HAIRCUT')}>HAIRCUT</button>
           </div>
           <div id="serviceTwo" 
-          className='
-          h-[60px] bg-purple-300 w-full text-center p-[20px]
-          lg:border-r-2 lg:border-black lg:text-center lg:text-[25px] lg:p-[20px]'>
+            className={`h-[80px] w-full text-center  p-[20px] lg:border-r-2 lg:border-black font-semibold lg:text-center lg:text-[22px] lg:p-[20px] ${selectedService === 'SHAVING' ? 'bg-[#ae8547]' : 'bg-white'}`}>
             <button onClick={() => setSelectedService('SHAVING')}>SHAVING</button>
           </div>
           <div id="serviceThree" 
-          className='
-          h-[60px] bg-purple-400 w-full text-center p-[20px]
-          lg:border-r-2 lg:border-black lg:text-center lg:text-[25px] lg:p-[20px]'>
+            className={`h-[80px] w-full text-center  p-[20px] lg:border-r-2 lg:border-black font-semibold lg:text-center lg:text-[22px] lg:p-[20px] ${selectedService === 'TRIMMING' ? 'bg-[#ae8547]' : 'bg-white'}`}>
             <button onClick={() => setSelectedService('TRIMMING')}>TRIMMING</button>
           </div>
           <div id="serviceFour" 
-          className='
-          h-[60px] bg-purple-500 w-full text-center p-[20px]
-          lg:border-r-2 lg:border-black lg:text-center lg:text-[25px] lg:p-[20px]'>
+            className={`h-[80px] w-full text-center  p-[20px] lg:border-r-2 lg:border-black font-semibold lg:text-center lg:text-[22px] lg:p-[20px] ${selectedService === 'HAIRSTYLING' ? 'bg-[#ae8547]' : 'bg-white'}`}>
             <button onClick={() => setSelectedService('HAIRSTYLING')}>HAIRSTYLING</button>
           </div>
         </div>
