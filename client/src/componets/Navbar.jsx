@@ -67,7 +67,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="button">
-              <Link to='/appoinment' className="lg:border-[3px] lg:border-black lg:p-2">
+              <Link to='/login' className="lg:border-[3px] lg:border-black lg:p-2">
               Booking
               </Link>
             </li>

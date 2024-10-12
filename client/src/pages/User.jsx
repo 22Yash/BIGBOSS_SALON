@@ -8,19 +8,17 @@ import BookAppoinment from './BookAppoinment'
 import ContactUS from './ContactUS'
 import Contact from '../componets/Contact'
 
-
-function Home() {
+function User() {
   return (
-    <div className=' h-screen w-full'>
-      <Hero/>
+   <>
+   <Hero/>
       <Aboutus/>
       <Service/>
       <Shop/>
       <Contact/>
-     
-      
-    </div>
+
+   </>
   )
 }
 
-export default Home
+export default User
