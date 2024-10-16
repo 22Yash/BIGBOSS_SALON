@@ -7,16 +7,13 @@ import Shop from './Shop'
 import BookAppoinment from './BookAppoinment'
 import ContactUS from './ContactUS'
 import Contact from '../componets/Contact'
+import AdminWages from './AdminWages'
 
 function Admin() {
   return (
     <div>
         
-      <Hero/>
-      <Aboutus/>
-      <Service/>
-      <Shop/>
-      <Contact/>
+      <AdminWages/>
     </div>
   )
 }

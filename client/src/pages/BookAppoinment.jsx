@@ -21,7 +21,7 @@ function BookAppoinment() {
   useEffect(() => {
     const fetchBookedDates = async () => {
       try {
-        const response = await fetch("http://localhost:5000/appointments");
+        const response = await fetch("http://localhost:5000/appoinment");
         const data = await response.json();
         setBookedDates(data.bookedDates);
       } catch (error) {
@@ -82,8 +82,12 @@ function BookAppoinment() {
   //data booking 
 
   const isDateBooked = (date) => {
+    if (!bookedDates || bookedDates.length === 0) {
+      return false; // If there are no booked dates, allow all dates to be selectable
+    }
     return bookedDates.includes(date.toISOString().split("T")[0]);
   };
+  
 
   const [selectedService, setSelectedService] = useState("");
   const [selectedSubServices, setSelectedSubServices] = useState([]);

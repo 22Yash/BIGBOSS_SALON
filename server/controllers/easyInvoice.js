@@ -20,16 +20,41 @@ function generateInvoice(customerName, selectedServices, filePath) {
     // Debugging: Log selected services
     console.log('Selected Services:', selectedServices);
 
-    // Map selectedServices to create rows for the table
-    const items = selectedServices.map(service => [
-        service.name || 'N/A',
-        service.staff || 'N/A',
-        service.price !== undefined ? `₹${service.price.toFixed(2)}` : 'N/A'
-    ]);
+    // Create table rows for services and sub-services
+    const items = selectedServices.map(service => {
+        // Extract main service details
+        const mainServiceRow = [
+            { text: service.name || 'N/A', bold: true }, // Main service
+            service.staff || 'N/A', // Staff name
+            `₹${service.price.toFixed(2)}` // Main service price
+        ];
 
-    // Calculate total price
-    const totalPrice = selectedServices.reduce((total, service) => total + (service.price || 0), 0);
+        // Add sub-services if they exist
+        const subServiceRows = (service.selectedSubServices || []).map(subService => {
+            // Split sub-service string like 'Full Legs:400'
+            const [subServiceName, subServicePrice] = subService.split(':');
 
+            return [
+                { text: `   - ${subServiceName.trim()}`, margin: [10, 0, 0, 0] }, // Indented sub-service name
+                '', // No staff for sub-services
+                `₹${parseFloat(subServicePrice).toFixed(2)}` // Sub-service price
+            ];
+        });
+
+        // Combine main service row and sub-services rows
+        return [mainServiceRow, ...subServiceRows];
+    }).flat(); // Flatten to merge into a single array
+
+    // Calculate total price (including sub-services)
+    const totalPrice = selectedServices.reduce((total, service) => {
+        const subServiceTotal = (service.selectedSubServices || []).reduce((sum, subService) => {
+            const [, subServicePrice] = subService.split(':');
+            return sum + parseFloat(subServicePrice || 0);
+        }, 0);
+        return total + service.price + subServiceTotal;
+    }, 0);
+
+    // Create the document definition
     const docDefinition = {
         content: [
             {
@@ -56,14 +81,15 @@ function generateInvoice(customerName, selectedServices, filePath) {
             {
                 table: {
                     headerRows: 1,
-                    widths: [ '*', '*', 'auto' ],
+                    widths: ['*', '*', 'auto'],
                     body: [
                         [
                             { text: 'Service', style: 'tableHeader' },
                             { text: 'Staff', style: 'tableHeader' },
                             { text: 'Price', style: 'tableHeader' }
                         ],
-                        ...items,
+                        ...items, // Insert services and sub-services here
+                        // Add the total price row as the last row
                         [{ text: 'Total', colSpan: 2, style: 'tableFooter' }, {}, `₹${totalPrice.toFixed(2)}`]
                     ]
                 },

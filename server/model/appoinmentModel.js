@@ -31,6 +31,9 @@ const userSchema = new mongoose.Schema({
     totalPrice: { 
         type: Number, 
         required: true
+     },
+     wage : {
+        type: Number,
      }
 })
 

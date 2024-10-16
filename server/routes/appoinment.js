@@ -7,6 +7,8 @@ const sleep = promisify(setTimeout);
 
 // require('../db/conn')
 const Appoinment = require('../model/appoinmentModel');
+const Wage = require('../model/wageModel'); // Adjust the path if needed
+
 const { sendMail } = require('../controllers/sendMail');
 const { generateInvoice } = require('../controllers/easyInvoice');
 
@@ -45,9 +47,25 @@ router.post('/appoinment', async (req, res) => {
 
         await user.save();
 
+        const wageAmount = totalPrice * 0.5;
+
+        // Save wage details for the staff
+        const wage = new Wage({
+            staffName: staff,
+            clientName: name,
+            service: Array.isArray(selectedServices) ? selectedServices : [selectedServices], // Ensure it's always an array
+            subServices: formattedSubServices,
+            date,
+            totalPrice,
+            wage: wageAmount
+        });
+        await wage.save();
+        console.log("Wage saved:", wage);
+
+
         // Define the file path correctly
         const filePath = path.join(__dirname, `../invoices/invoice_${name.replace(/\s+/g, '_')}.pdf`);
-console.log(`Attempting to read file at: ${filePath}`);
+        console.log(`Attempting to read file at: ${filePath}`);
 
         
         // Generate the invoice

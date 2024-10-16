@@ -17,7 +17,7 @@ app.use(cors({
     allowedHeaders: 'Content-Type,Authorization', // Specify allowed headers
 }));
 
-app.use(express.json());
+ app.use(express.json());
 
 app.use(require('./routes/appoinment'))
 
@@ -27,17 +27,15 @@ dotenv.config({path:'./config.env'});
 require('./db/conn')
 
 
+const adminWages = require('./routes/wages');
+app.use('/wages', adminWages);
 
-
+app.use(require('./routes/login'));
 
 
 const middleware = (req,res,next)=>{
     console.log("");
     next();
-    
-   
-
-
 }
 
 
@@ -53,6 +51,8 @@ app.get('/appoinment', middleware , (req,res)=>{
     res.status(200).json({ message: "Appointment successfully created" });
     
 })
+
+
 
 
 app.listen(port,()=>{
