@@ -42,33 +42,33 @@ function Aboutus() {
         </div>
         <div
           id="aboutServices"
-          className="merriweather-regular bg-slate-50 uppercase 
+          className="merriweather-regular  uppercase 
           h-[100px] grid grid-cols-1 gap-4 m-[20px]
           sm:grid sm:grid-cols-2 sm:h-[140p] 
-          lg:h-[180px] lg:grid lg:grid-cols-6 lg:gap-5 "
+          lg:h-[180px] lg:flex lg:pl-[120px] "
         >
-          <div className="highlights bg-red-400 sm:hidden lg:opacity-100"></div>
-          <div className="highlights bg-red-700 flex gap-[80px]">
-            <div id="one" className="">
-              <RiScissors2Fill className="" />
+          <div className="highlights bg-red-400 sm:hidden lg:opacity-100"> huinkjn</div>
+          <div className="highlights bg-slate-50 w-[300px] rounded-[20px] gap-[20px] flex justify-center  items-center">
+            <div id="one" className="flex justify-center items-center">
+              <RiScissors2Fill className="text-[90px] " />
             </div>
             <div id="two">
               <h3 className='text-[60px] font-semibold'>20</h3>
               <h3 className='text-[18px]'>Skilled Barbers</h3>
             </div>
           </div>
-          <div className="highlights bg-red-700 flex justify-between">
+          <div className="highlights bg-slate-50 rounded-[20px] w-[300px]  gap-[20px] flex justify-center  items-center">
             
             <div id="one">
-            <GiSunglasses />
+            <GiSunglasses className='text-[90px] ' />
             </div>
             <div id="two">
               <h3 className='text-[60px] font-semibold'>120</h3>
               <h3 className='text-[18px]'>Happy Clients</h3>
             </div>
           </div>
-          <div className="highlights bg-red-700 flex justify-between">
-            <GiBeard />
+          <div className="highlights bg-slate-50 w-[300px] rounded-[20px]  gap-[10px] flex justify-center  items-center">
+            <GiBeard  className='text-[90px] '/>
             <div id="one" ></div>
             <div id="two" >
               <h3 className='text-[60px] font-semibold'>210</h3>
@@ -76,8 +76,8 @@ function Aboutus() {
             </div>
             
           </div>
-          <div className="highlights bg-red-700 flex justify-between">
-            <BsStars />
+          <div className="highlights  w-[300px] bg-slate-50  rounded-[20px] gap-[20px] flex justify-center  items-center">
+            <BsStars className='text-[90px] ' />
             <div id="one"></div>
             <div id="two">
               <h3 className='text-[60px] font-semibold'>10</h3>

@@ -7,7 +7,8 @@ function Contact() {
   return (
     <div id='#contact' className='relative'>
 
-        <div id="info" className=' absolute lg:flex  text-white merriweather-regular lg:gap-[12px] lg:flex-col lg:ml-[1000px] lg:mt-[20px] lg:w-[300px] lg:h-[400px] bg-[#ae8547] '>
+        <div id="info" className=' absolute lg:flex  text-white merriweather-regular 
+        lg:gap-[12px] lg:flex-col lg:ml-[1000px] lg:mt-[20px]  lg:w-[300px] lg:h-[400px] bg-[#ae8547] '>
              
              <h2 className='lg:ml-[30px] lg:pt-[30px] font-semibold lg:text-[20px] uppercase'>How to find us</h2>
              <div id="number" className="mt-[30px] lg:flex  lg:gap-[70px]">
@@ -41,7 +42,7 @@ function Contact() {
 
 
         </div>
-        <div id="map" className="lg:overflow-hidden lg:w-full lg:mt-[30px] lg:p-[20px] ">
+        <div id="map" className="lg:overflow-hidden lg:w-full lg:mt-[30px] lg:p-[20px] c ">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241110.48013799687!2d72.57190493281253!3d19.2235177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b12ae38f8ff7%3A0x675c15d201293757!2sBig%20boss%20Salon!5e0!3m2!1sen!2sin!4v1726292442394!5m2!1sen!2sin" 
           width="100%" height="400"  allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>

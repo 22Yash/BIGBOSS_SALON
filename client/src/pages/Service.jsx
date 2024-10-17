@@ -28,7 +28,7 @@ function Service() {
       <div id="service" className='
       mt-[330px] p-[20px] w-full h-[130vh]
       sm:mt-[0px] 
-      lg:mt-[0px] lg:w-full lg:h-[130vh] bg-[#f2f2f2] lg:pt-[30px]'>
+      lg:mt-[0px] lg:w-full lg:h-[130vh] bg-[#f2f2f2] lg:pt-[40px] '>
         <div id="serviceBanner" className='h-[400px] flex justify-center items-center lg:mt-[50px] lg:h-[400px] lg:flex lg:justify-center lg:items-center' style={{ backgroundImage: `url(${banner})` }}>
           <div id="info" className='merriweather-regular  -mt-[130px] w-[400px] lg:-mt-[160px] lg:w-[600px]'>
             <h3 className='lg:font-semibold text-[30px] lg:text-[40px] text-white text-center'>Services</h3>

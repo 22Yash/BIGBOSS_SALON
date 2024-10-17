@@ -24,9 +24,9 @@ function Navbar() {
   
   return (
     <>
-      <div id="navBar" className="merriweather-regular flex justify-between h-[90px] lg:flex lg:justify-between bg-gray-300 lg:h-[100px] lg:p-[10px] ">
+      <div id="navBar" className="merriweather-regular flex justify-between h-[90px] lg:flex lg:justify-between bg-transparent lg:h-[100px] lg:p-[10px] ">
         <div id="leftNav" className="lg:p-[20px] p-[20px] ">
-          <a href="/"><img src={salonLogo} alt="" className="w-[120px] lg:w-[100px] lg:ml-[30px]"/></a>
+          <a href="/"><img src={salonLogo} alt="" className="w-[120px] lg:w-[160px] lg:ml-[30px]"/></a>
           
         </div>
         <div id="rightNav" className="lg:pt-[10px]">
@@ -39,35 +39,35 @@ function Navbar() {
         </div> */}
             
             </li>
-          <ul className="hidden lg:flex lg:p-[20px] lg:gap-[40px]">
+          <ul className="hidden text-white text-[20px]   lg:flex lg:p-[20px] lg:gap-[40px]">
             
             <li>
-              <Link to="/" className="">
+              <Link to="/" className="border-b-[4px] border-transparent hover:border-[#ae8547] pb-2">
                 Home
               </Link>
             </li>
             <li className="button">
-              <Link to="#aboutus" className="">
+              <Link to="#aboutus" className="border-b-[4px] border-transparent hover:border-[#ae8547] pb-2">
                 About Us
               </Link>
             </li>
             <li className="button">
-              <Link to="#service" className="">
+              <Link to="#service" className="border-b-[4px] border-transparent hover:border-[#ae8547] pb-2">
                 Services
               </Link>
             </li>
             <li className="button">
-              <Link to="#shop" className="">
+              <Link to="#shop" className="border-b-[4px] border-transparent hover:border-[#ae8547] pb-2">
                 Shop 
               </Link>
             </li>
             <li className="button">
-              <Link to="/Contact" className="">
+              <Link to="/Contact" className="border-b-[4px] border-transparent hover:border-[#ae8547] pb-2">
                 Contact 
               </Link>
             </li>
             <li className="button">
-              <Link to='/login' className="lg:border-[3px] lg:border-black lg:p-2">
+              <Link to='/login' className="lg:border-[3px] lg:border-white lg:p-2  hover:bg-[#ae8547] hover:border-[#ae8547]">
               Booking
               </Link>
             </li>
