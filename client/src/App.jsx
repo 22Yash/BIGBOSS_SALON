@@ -11,6 +11,8 @@ import User from "./pages/User";
 import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
 import Login from "./pages/Login";
+import UserAppoinment from "./pages/UserAppoinment";
+import AdminWages from "./pages/AdminWages";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,7 +28,9 @@ function App() {
           <Route path="/user" element={<User />} />
 
           <Route path="/admin" element={<Admin />} />
+          <Route path="/wages" element={<AdminWages/>} />
           <Route path="/appoinment" element={<BookAppoinment />} />
+          <Route path="/userappoinment" element={<UserAppoinment/>} />
           <Route path="/Contact" element={<ContactUS />} />
         </Routes>
       </BrowserRouter>

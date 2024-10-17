@@ -8,12 +8,13 @@ import BookAppoinment from './BookAppoinment'
 import ContactUS from './ContactUS'
 import Contact from '../componets/Contact'
 import AdminWages from './AdminWages'
+import AdminNav from '../componets/AdminNav'
 
 function Admin() {
   return (
     <div>
         
-      <AdminWages/>
+     <AdminNav/>
     </div>
   )
 }

@@ -4,9 +4,8 @@ import blog2 from "../assets/images/bookingBanner.jpg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { services } from "../constants/serviceData";
-import AdminNav from "../componets/AdminNav";
 
-function BookAppoinment() {
+function UserAppoinment() {
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -22,7 +21,7 @@ function BookAppoinment() {
   useEffect(() => {
     const fetchBookedDates = async () => {
       try {
-        const response = await fetch("http://localhost:5000/appoinment");
+        const response = await fetch("http://localhost:5000/userappoinment");
         const data = await response.json();
         setBookedDates(data.bookedDates);
       } catch (error) {
@@ -145,7 +144,7 @@ function BookAppoinment() {
         id="appoinment"
         className="lg:w-full lg:h-auto lg:flex lg:flex-col lg:gap-[650px]"
       >
-        <AdminNav/>
+        <Navbar />
 
         <div
           className="absolute left-0 w-full h-[400px] bg-cover bg-center top-[120px]"
@@ -171,7 +170,7 @@ function BookAppoinment() {
           >
             <div
               id="div"
-              className="lg:w-[1200px] lg:bg-[#f2f2f2] lg:mt-[-200px] lg:justify-center lg:items-center lg:flex lg:flex-col lg:rounded-[40px]"
+              className="lg:w-[1200px] lg:bg-[#552e2e] lg:mt-[-200px] lg:justify-center lg:items-center lg:flex lg:flex-col lg:rounded-[40px]"
             >
               {/* User Info */}
               <div
@@ -319,4 +318,4 @@ function BookAppoinment() {
   );
 }
 
-export default BookAppoinment;
+export default UserAppoinment;

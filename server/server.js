@@ -52,6 +52,14 @@ app.get('/appoinment', middleware , (req,res)=>{
     
 })
 
+app.get('/userappoinment', middleware , (req,res)=>{
+    const { name, email, service, staff, date } = req.body;
+
+    // Your logic to handle the appointment data
+    res.status(200).json({ message: "Appointment successfully created" });
+    
+})
+
 
 
 

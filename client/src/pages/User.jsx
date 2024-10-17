@@ -7,11 +7,12 @@ import Shop from './Shop'
 import BookAppoinment from './BookAppoinment'
 import ContactUS from './ContactUS'
 import Contact from '../componets/Contact'
+import UserHero from '../componets/UserHero'
 
 function User() {
   return (
    <>
-   <Hero/>
+      <UserHero/>
       <Aboutus/>
       <Service/>
       <Shop/>

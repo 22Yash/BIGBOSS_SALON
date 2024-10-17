@@ -22,20 +22,25 @@ function UserLogin() {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     const { email, password } = formData;
-    const res = await fetch('http://localhost:5000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const res = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const data = await res.json();
-    if (data.error) {
-      console.error(data.error);
-    } else {
-      console.log('Login successful', data.user);
-      navigate('/user');
+      const data = await res.json();
+      if (data.error) {
+        console.error(data.error); // Display the error on console or show an alert
+        alert(data.error);
+      } else {
+        console.log('Login successful', data.user);
+        navigate('/user'); // Redirect to user dashboard on successful login
+      }
+    } catch (error) {
+      console.error('An error occurred during login', error);
     }
   };
 
@@ -44,22 +49,28 @@ function UserLogin() {
     const { fullname, email, password, confirmpassword } = formData;
 
     if (password !== confirmpassword) {
-      return console.error('Passwords do not match');
+      return alert('Passwords do not match');
     }
 
-    const res = await fetch('http://localhost:5000/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ fullname, email, password }),
-    });
+    try {
+      const res = await fetch('http://localhost:5000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fullname, email, password }),
+      });
 
-    const data = await res.json();
-    if (data.error) {
-      console.error(data.error);
-    } else {
-      console.log('Registration successful', data.user);
+      const data = await res.json();
+      if (data.error) {
+        console.error(data.error); // Display the error on console or show an alert
+        alert(data.error);
+      } else {
+        console.log('Registration successful', data.user);
+        alert('Registration successful');
+      }
+    } catch (error) {
+      console.error('An error occurred during registration', error);
     }
   };
 
